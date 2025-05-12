@@ -43,3 +43,8 @@ class Solution:
 
         return False
 ```
+
+## Review comments
+*   Hash set の方が想定解っぽい: https://docs.google.com/document/d/11HV35ADPo9QxJOpJQ24FcZvtvioli770WWdZZDaLOfg/edit?tab=t.0#heading=h.2k4z0wt6ytf9
+*   `is not` と `!=` の違い
+    *   identity check と equality check
