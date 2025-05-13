@@ -22,7 +22,8 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
-# Create and checkout the Git branch
+# Create and checkout the Git branch (always branch from main)
+git checkout main
 git checkout -b "$DIR_NAME"
 
 # Create the directory
