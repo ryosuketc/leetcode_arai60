@@ -31,4 +31,6 @@ https://en.wikipedia.org/wiki/Sentinel_node
 
 ### step3
 
-* 
+*   このあたりを参照した
+    *   https://github.com/Mike0121/LeetCode/pull/40/files
+    *   https://github.com/nittoco/leetcode/pull/9/files
