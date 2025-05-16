@@ -33,13 +33,13 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
-gh pr create \
+echo "# $TITLE\n\n$URL" | gh pr create \
   --base main \
   --head "$DIR_NAME" \
-  --title "82. Remove Duplicates from Sorted List II" \
-  --body "# $TITLE\n\n$URL"
+  --title "$TITLE" \
+  --body-file=-
 
-echo "'$TITLE' を解いたのでレビューいただけると幸いです。"
-echo "問題: '$URL'"
+echo "$TITLE を解いたのでレビューいただけると幸いです。"
+echo "問題: $URL"
 echo "PR: TBD"
 echo "言語: Python"
