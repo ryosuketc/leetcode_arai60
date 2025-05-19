@@ -33,6 +33,7 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
+echo "Adding, committing, and pushing to git..."
 # git push
 git checkout "$DIR_NAME"
 git add "$DIR_NAME"
@@ -42,6 +43,7 @@ $URL"
 git push --set-upstream origin "$DIR_NAME"
 
 # Create PR
+echo "Creating PR..."
 echo -e "# $TITLE\n\n$URL" | gh pr create \
   --base main \
   --head "$DIR_NAME" \
