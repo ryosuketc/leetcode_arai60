@@ -33,7 +33,7 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
-echo "# $TITLE\n\n$URL" | gh pr create \
+echo -e "# $TITLE\n\n$URL" | gh pr create \
   --base main \
   --head "$DIR_NAME" \
   --title "$TITLE" \
