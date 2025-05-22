@@ -26,4 +26,4 @@ https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
 *   予定が詰まっていてそこまで時間をかけられないのでひとまずレビューに出すが、他の人の解答やコメントまだ見れてない。とはいえ概ね良さそうな印象は受けるが。
 *   7:20 -> 9:56 -> 6:08
 *   結局各 1 箇所ずつくらいはスペルミスや違う変数への参照で error / wrong answer になってしまった。
-*   書いていると、なんとなく remaining という変数より num_pairs_found の方がわかりやすいかなと思った。あと、add_smallest_candidate の guard clause の条件をまとめた。
+*   書いていると、なんとなく remaining という変数より num_pairs_found の方がわかりやすいかなと思った。あと、add_smallest_candidate の guard clause の条件をまとめた
