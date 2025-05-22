@@ -17,8 +17,13 @@ https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
 
 ### step2
 
-*   
+*   heappush するあたりが異常に読みにくい。関数化して変数名見直し。
+*   smallest_pairs (heap) とか visited とか、引数で引き回すより本当はクラスのインスタンスメンバに入れたい。ただ今回 class が Solution なので微妙かもと思って関数内から外のスコープにアクセスする形にした。
+*   nums1_index + 1 < len(nums1) のチェックは関数内の方がきれいか (`Solution2`)。
 
 ### step3
 
-*   
+*   予定が詰まっていてそこまで時間をかけられないのでひとまずレビューに出すが、他の人の解答やコメントまだ見れてない。とはいえ概ね良さそうな印象は受けるが。
+*   7:20 -> 9:56 -> 6:08
+*   結局各 1 箇所ずつくらいはスペルミスや違う変数への参照で error / wrong answer になってしまった。
+*   書いていると、なんとなく remaining という変数より num_pairs_found の方がわかりやすいかなと思った。あと、add_smallest_candidate の guard clause の条件をまとめた。
