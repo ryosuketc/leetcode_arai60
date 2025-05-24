@@ -11,10 +11,12 @@ https://github.com/ryosuketc/leetcode_arai60/pulls
 ## Referenced repositories
 
 *   Python
-    *   https://github.com/Mike0121/LeetCode/pulls
+    *   https://github.com/hayashi-ay/leetcode/pulls
     *   https://github.com/nittoco/leetcode/pulls
-    *   https://github.com/TORUS0818/leetcode/pulls
+    *   https://github.com/t0hsumi/leetcode/pulls
     *   https://github.com/fuga-98/arai60/pulls
+    *   https://github.com/Mike0121/LeetCode/pulls
+    *   https://github.com/TORUS0818/leetcode/pulls
     *   https://github.com/Fuminiton/LeetCode/pulls
 *   Rust
     *   https://github.com/Yoshiki-Iwasa/Arai60/pulls
