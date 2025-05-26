@@ -18,6 +18,7 @@ https://github.com/ryosuketc/leetcode_arai60/pulls
     *   https://github.com/Mike0121/LeetCode/pulls
     *   https://github.com/TORUS0818/leetcode/pulls
     *   https://github.com/Fuminiton/LeetCode/pulls
+    *   https://github.com/shining-ai/leetcode/
 *   Rust
     *   https://github.com/Yoshiki-Iwasa/Arai60/pulls
 
