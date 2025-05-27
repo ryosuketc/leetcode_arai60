@@ -35,4 +35,3 @@ if len(self.min_heap) < self.k or self.min_heap[0] < val:
 ### step3
 
 *   1:30 -> 1:25 -> 1:30
-
