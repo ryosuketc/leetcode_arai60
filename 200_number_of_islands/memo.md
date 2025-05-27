@@ -56,10 +56,10 @@ print(result)  # 出力: 15
     *   https://github.com/Hurukawa2121/leetcode/pull/17/files
     *   https://docs.google.com/document/d/11HV35ADPo9QxJOpJQ24FcZvtvioli770WWdZZDaLOfg/edit?tab=t.0#heading=h.p4yi13m12dqu
     *   なんかときどき見ている動画 (path compression もカバーしていたはず): https://www.youtube.com/watch?v=wU6udHRIkcc
+*   DFS で行こうとは思ってちょっと整えてみた (`SolutionDfs`)。
+*   recursionlimit をいじるのが気に食わないので iterative DFS にした (`SolutionIterativeDfs`)
 
 ### step3
 
 *   結局今回、DFS、BFS、Union Find のどれがいいのかはよくわからん。個人的に grid traversal 系は DFS が慣れてるんだけど
-*   DFS で行こうとは思ってちょっと整えてみた (`SolutionDfs`)。
-*   recursionlimit をいじるのが気に食わないので iterative DFS にした (`SolutionIterativeDfs`)
 *   5:30 -> 4:30 -> 3:40
