@@ -62,6 +62,9 @@ print(result)  # 出力: 15
 ## Union Find
 
 *   Union Find もあるんだった。定期的に勉強しては忘れている…TODO: あとで復習
+    *   > union-find  は、微妙に常識から外れるかな(多くの人が知っているだろうが知らなくてもドン引きはされない)、くらいの感覚です。DFS による解法のほうは常識でしょう。
+        *   https://discord.com/channels/1084280443945353267/1183683738635346001/1197738650998415500
+        *   ここの例示はわかりやすかった
     *   https://github.com/ichika0615/arai60/pull/9/files
     *   https://github.com/Hurukawa2121/leetcode/pull/17/files
     *   https://docs.google.com/document/d/11HV35ADPo9QxJOpJQ24FcZvtvioli770WWdZZDaLOfg/edit?tab=t.0#heading=h.p4yi13m12dqu
