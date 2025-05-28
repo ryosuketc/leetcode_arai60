@@ -51,11 +51,6 @@ print(result)  # 出力: 15
     *   https://github.com/tarinaihitori/leetcode/pull/17#discussion_r1839410598
     *   これ踏まえると Python の recursion_limit (== 1000) を超える可能性がある、という話。もしくは再帰でなく stack で実装するか。
     *   https://github.com/Fuminiton/LeetCode/pull/17#discussion_r1984361170
-*   Union Find もあるんだった。定期的に勉強しては忘れている…TODO: あとで復習
-    *   https://github.com/ichika0615/arai60/pull/9/files
-    *   https://github.com/Hurukawa2121/leetcode/pull/17/files
-    *   https://docs.google.com/document/d/11HV35ADPo9QxJOpJQ24FcZvtvioli770WWdZZDaLOfg/edit?tab=t.0#heading=h.p4yi13m12dqu
-    *   なんかときどき見ている動画 (path compression もカバーしていたはず): https://www.youtube.com/watch?v=wU6udHRIkcc
 *   DFS で行こうとは思ってちょっと整えてみた (`SolutionDfs`)。
 *   recursionlimit をいじるのが気に食わないので iterative DFS にした (`SolutionIterativeDfs`)
 
@@ -63,3 +58,84 @@ print(result)  # 出力: 15
 
 *   結局今回、DFS、BFS、Union Find のどれがいいのかはよくわからん。個人的に grid traversal 系は DFS が慣れてるんだけど
 *   5:30 -> 4:30 -> 3:40
+
+## Union Find
+
+*   Union Find もあるんだった。定期的に勉強しては忘れている…TODO: あとで復習
+    *   https://github.com/ichika0615/arai60/pull/9/files
+    *   https://github.com/Hurukawa2121/leetcode/pull/17/files
+    *   https://docs.google.com/document/d/11HV35ADPo9QxJOpJQ24FcZvtvioli770WWdZZDaLOfg/edit?tab=t.0#heading=h.p4yi13m12dqu
+    *   なんかときどき見ている動画 (path compression もカバーしていたはず): https://www.youtube.com/watch?v=wU6udHRIkcc
+
+## Relevant LeetCode
+
+TODO: 要復習だが、過去に解いた問題と当時書いた解答例を乗せる。2024-07 頃に解いたらしい
+
+*   https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/
+    *   323. Number of Connected Components in an Undirected Graph
+
+```python
+class Solution:
+    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        par = [i for i in range(n)]
+        rank = [1] * n
+
+        def find_parent(node: int):
+            res = node
+
+            while res != par[res]:
+                par[res] = par[par[res]]
+                res = par[res]
+            return res
+        
+        def union(n1, n2):
+            p1, p2 = find_parent(n1), find_parent(n2)
+            if p1 == p2:
+                return 0
+            
+            if rank[p1] > rank[p2]:
+                par[p2] = p1
+                rank[p1] += rank[p2]
+            else:
+                par[p1] = p2
+                rank[p2] += rank[p1]
+            return 1
+        
+        res = n
+        for n1, n2 in edges:
+            res -= union(n1, n2)
+        return res
+```
+
+*   https://leetcode.com/problems/redundant-connection/description/
+    *   684. Redundant Connection
+
+```python
+class Solution:
+    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+        par = [i for i in range(len(edges) + 1)]
+        rank = [1] * (len(edges) + 1)
+
+        def find_par(n) -> int:
+            p = par[n]
+            while p != par[p]:
+                par[p] = par[par[p]]
+                p = par[p]
+            return p
+        
+        def union(n1, n2) -> bool:
+            p1, p2 = find_par(n1), find_par(n2)
+            if p1 == p2:
+                return False
+            if rank[p1] > rank[p2]:
+                par[p2] = p1
+                rank[p1] += rank[p2]
+            else:
+                par[p1] = p2
+                rank[p2] += rank[p1]
+            return True
+        
+        for n1, n2 in edges:
+            if not union(n1, n2):
+                return [n1, n2]
+```
