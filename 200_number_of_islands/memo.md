@@ -67,7 +67,7 @@ print(result)  # 出力: 15
     *   https://docs.google.com/document/d/11HV35ADPo9QxJOpJQ24FcZvtvioli770WWdZZDaLOfg/edit?tab=t.0#heading=h.p4yi13m12dqu
     *   なんかときどき見ている動画 (path compression もカバーしていたはず): https://www.youtube.com/watch?v=wU6udHRIkcc
 
-## Relevant LeetCode
+### Relevant LeetCode
 
 TODO: 要復習だが、過去に解いた問題と当時書いた解答例を乗せる。2024-07 頃に解いたらしい
 
