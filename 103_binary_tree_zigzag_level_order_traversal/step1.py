@@ -23,7 +23,6 @@ class Solution1:
         level = 0
         nodes_with_level = deque([(root, level)])
         result = []
-        go_left_to_right = True
         while nodes_with_level:
             node, level = nodes_with_level.popleft()
             while len(result) <= level:
