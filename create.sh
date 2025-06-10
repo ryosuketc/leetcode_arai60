@@ -20,7 +20,7 @@ TITLE="$1"
 URL="$2"
 
 # Remove /description and any trailing slashes from the URL if present
-URL=$(echo "$URL" | sed 's|/description[/]*$||')
+URL=$(echo "$URL" | sed 's|description[/]*$||')
 
 # Check if a directory name was provided
 if [ -z "$TITLE" ]; then
