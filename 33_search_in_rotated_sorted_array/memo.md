@@ -27,28 +27,62 @@ https://leetcode.com/problems/search-in-rotated-sorted-array/
     *   `(num <= nums[-1], target <= num)`
         *   結局これを key にソートしようとしているイメージ？
         *   まず nums[-1] との大小で絶対的な序列が決まる。num <= nums[-1] であれば、より小さい方の山にあるはずなので、T。崖を登っているのが F (0), 降りた後なのが T(1)。今回は F の方が序列が高い (昇順で先にくる)。
-        *   次に target と比較して、num < target であれば F、それ以外は T。
+        *   次に target と比較して、target 未満が F、target 以上が T。
+        *   これを使うと
+            *   崖を登っている (F) and target 未満 (F)
+            *   崖を登っている (F) and target 以上 (T)
+            *   崖を越えたあと (T) and target 未満 (F)
+            *   崖を越えたあと (T) and target 以上 (T)
+        *   という順番に並ぶ。
 
 ```python
 def priority(num, nums, target):
-    return (num <= nums[-1], target <= num)
+    return (num <= nums[-1], target <= num, num)
 
 def get_keys(nums, target):
     keys = []
     for num in nums:
         keys.append(priority(num, nums, target))
     print(f'nums={nums}')
+    print(f'target={target}')
     print(f'keys={keys}')
     return keys
 
 nums = [4, 5, 6, 7, 0, 1, 2]
 target = 1
-get_keys(nums, target)
+keys = get_keys(nums, target)
 
 nums=[4, 5, 6, 7, 0, 1, 2]
-keys=[(False, True), (False, True), (False, True), (False, True), (True, False), (True, True), (True, True)]
+target=1
+keys=[(False, True, 4), (False, True, 5), (False, True, 6), (False, True, 7), (True, False, 0), (True, True, 1), (True, True, 2)]
+
+nums = [4, 5, 6, 7, 0, 1, 2]
+target = 5
+keys = get_keys(nums, target)
+
+nums=[4, 5, 6, 7, 0, 1, 2]
+target=5
+keys=[(False, False, 4), (False, True, 5), (False, True, 6), (False, True, 7), (True, False, 0), (True, False, 1), (True, False, 2)]
+
 ```
+
+ここまで試して、bisect の話わからんなあ、と思っていたが、index を見つけるところ
+
+```python
+index = bisect_left(nums, priority(target), key=priority)
+```
+
+なので、target 自体を探しているわけではなく (target を探していると思っていた)、priority の返り値 = (bool, bool) を探している。ので、その返り値が出てくる一番左を返している。priority(target) は、定義から FT か TT (後ろが target 以上で True なので) のどちらか。
+
+うーん、やっていることはわかったのだが、正直なぜこれ (`priority`) で target の位置になるのかイマイチ納得はできていない。。
+
+*   `Solution1`: bisect のやり方で一応書いたのを残しておく。まだ 100% 理解できてない。
+*   `Solution2`: インタビューであればこっちのやり方が想定される気がする。落ち着いて場合分けするのがポイントか。
+*   `Solution3_WA`: 半開区間 (right は含まない) で書こうとして失敗。
+    *   https://github.com/hayashi-ay/leetcode/pull/49/files
+    *   `Solution3_AC`: right は含まないんだから、right = middle だ (middle を探索済みにする)。あと nums[right] も nums[right - 1]
+*   慣れの問題かもしれないが、閉区間の方が書きやすい気がした
 
 ### step3
 
-*   
+*   特記なし。閉区間のパターンで練習。
