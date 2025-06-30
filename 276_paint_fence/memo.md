@@ -60,6 +60,8 @@ The testcases are generated such that the answer is in the range [0, 231 - 1] fo
 *   https://github.com/hayashi-ay/leetcode/pull/17/files
     *   LRU Cache を自作していた。メモ化自体は `lru_cache` デコレータを使わなくても `SolutionManualMemo` のやり方でできると思っていたけど、デコレータの方を書くというのは考えていなかった。
     *   LRU Cache の実装自体は、NeetCode にもある: https://neetcode.io/problems/lru-cache?list=neetcode150 ので今回は省略。
+        *   LRU 実装はこのあたり: https://discord.com/channels/1084280443945353267/1201211204547383386/1220666008881336331
+        *   `OrderedDict` の実装は Doubly Linked List: https://github.com/Fuminiton/LeetCode/pull/30#discussion_r2040649727
     *   `SolutionMyDecorator`: この書き方だと AC
     *    デコレータはただの syntax sugar なので、と思って、`return memo(total_ways)(n)` と書いてみると n=43 で TLE した。何かの overhead があるんだろうか？ (`SolutionMyDecoratorTLE`)
         *   Gemini 賢い。`SolutionMyDecoratorTLE` の書き方だと、再帰呼び出しに使う関数はメモされていないんだ。
