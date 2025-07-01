@@ -33,6 +33,9 @@ https://leetcode.com/problems/longest-increasing-subsequence/
             *   > セグメントツリーは、確かに「使えることに気が付きにくいが、計算量を落とせる場合が極めて稀にあり、短時間で書けるくらい単純である」という意味で、プログラミングコンテストに向いているため、競技プログラミング同好会時代にも出てきていました。
         *   https://discord.com/channels/1084280443945353267/1231966485610758196/1300200786050940938
             *   実装についてはこのあたりを参照
+        *   https://qiita.com/june19312/items/e77485bfd9ba521ad060
+            *   概念としてはこのあたり読んでみた。なるほど、区間問い合わせに便利なのか…
+            *   一応概念としてはふわっと見たけど実装や、この問題でどう使えるかなど全くわかってないので後日また見る。
     *   https://discord.com/channels/1084280443945353267/1196472827457589338/1343157472742866956
         *   `sys.maxsize` あまりつかったことないなあ、という気持ち
             *   https://docs.python.org/3/library/sys.html#sys.maxsize
@@ -42,4 +45,4 @@ https://leetcode.com/problems/longest-increasing-subsequence/
 ### step3
 
 *   Binary Search にも課題はあり、セグメントツリーも勉強したいが、DP のセクションなので一旦 DP の問題として練習する
-
+*   最初関数で書いていたが、これは 2 中ループの方がすっきりするように思う。
