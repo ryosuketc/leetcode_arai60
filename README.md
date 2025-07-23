@@ -12,10 +12,11 @@ https://github.com/ryosuketc/leetcode_arai60/pulls
 
 *   Python
     *   https://github.com/hayashi-ay/leetcode/pulls
-    *   https://github.com/nittoco/leetcode/pulls
-    *   https://github.com/t0hsumi/leetcode/pulls
+    *   https://github.com/olsen-blue/Arai60/pulls
     *   https://github.com/fuga-98/arai60/pulls
         *   https://github.com/fuga-98/arai60/pull/58/files#diff-b74a144fcf30b9765b5a3057f5e09d7c6facdfa07a3f44095affab3affa62b27R56
+    *   https://github.com/nittoco/leetcode/pulls
+    *   https://github.com/t0hsumi/leetcode/pulls
     *   https://github.com/Mike0121/LeetCode/pulls
     *   https://github.com/TORUS0818/leetcode/pulls
     *   https://github.com/Fuminiton/LeetCode/pulls
