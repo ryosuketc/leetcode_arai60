@@ -61,7 +61,8 @@ Constraints:
 *   https://github.com/hayashi-ay/leetcode/pull/62/files
     *   `Solution3`: 5th, 6th の heap を使った書き方、あまり考えていなかったがこれはこれできれい。
         *   本質的には、`Solution1`, `Solution1_1` と同じ解法。ただ heap で管理している方がわかりやすいかな。
-
+*   TODO: fold とか reduce を使うような解法まだ考えてないかも。
+    *   https://github.com/Yoshiki-Iwasa/Arai60/pull/61/files
 
 ### step3
 
