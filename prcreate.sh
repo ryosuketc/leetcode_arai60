@@ -23,7 +23,7 @@ URL=$(echo "$URL" | sed 's|description[/]*$||')
 
 # Check if a directory name was provided
 if [ -z "$TITLE" ]; then
-  echo "Usage: $0 <directory_name>"
+  echo "Usage: $0 <directory_name> <URL>"
   exit 1
 fi
 
