@@ -1,8 +1,7 @@
 #!/bin/bash
-#
-# Create a git branch and directory with empty files, taking a title and a URL.
+# Create a git PR, taking a title and a URL.
 # Example usage:
-# ./create.sh "82. Remove Duplicates from Sorted List II" https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
+# ./prcreate.sh "82. Remove Duplicates from Sorted List II" https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 
 # Convert a string to snake case
 to_snake_case() {
@@ -28,7 +27,7 @@ if [ -z "$TITLE" ]; then
   exit 1
 fi
 
-# Convert the raw input to snake case
+# Convert the raw input to snake case == branch name.
 DIR_NAME=$(to_snake_case "$TITLE")
 
 # Check if it's a Git repository
@@ -37,38 +36,24 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
-# Create and checkout the Git branch (always branch from main)
-git checkout main
-git checkout -b "$DIR_NAME"
+echo "Adding, committing, and pushing to git..."
+# git push
+git checkout "$DIR_NAME"
+git add "$DIR_NAME"
+git commit -m "$TITLE
+ 
+$URL"
+git push --set-upstream origin "$DIR_NAME"
 
-# Create the directory
-mkdir -p "$DIR_NAME"
+# Create PR
+echo "Creating PR..."
+echo -e "# $TITLE\n\n$URL" | gh pr create \
+  --base main \
+  --head "$DIR_NAME" \
+  --title "$TITLE" \
+  --body-file=-
 
-# Create empty files under the directory
-touch "$DIR_NAME/step1.py"
-touch "$DIR_NAME/step2.py"
-touch "$DIR_NAME/step3.py"
-touch "$DIR_NAME/memo.md"
-
-# Populate memo.md using a heredoc
-cat << EOF > "$DIR_NAME/memo.md"
-# $TITLE
-
-$URL
-
-## Comments
-
-### step1
-
-*   
-
-### step2
-
-*   
-
-### step3
-
-*   
-EOF
-
-echo "Directory '$DIR_NAME' created with template files: step1.py, step2.py, step3.py, memo.md"
+echo "$TITLE を解いたのでレビューいただけると幸いです。"
+echo "問題: $URL"
+echo "PR: TBD"
+echo "言語: Python"
