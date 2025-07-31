@@ -11,6 +11,8 @@ Arai60 が終わったので、そのチェックポイント、個人的な備�
 *   **期間:** 2025-07-31 に解き終わったので、60 問 / 81 日で解いた。
 *   **手順:** 基本的に [マニュアル](https://docs.google.com/document/d/1bjbOSs-Ac0G_cjVzJ2Qd8URoU_0BNirZ8utS3CUAeLE/edit?usp=sharing) の step1 ~ step3 に則って進めた。
 
+なお個人の public な経歴は [LinkedIn](https://www.linkedin.com/in/ryosuke-tachibana-4495b9a9/) にある。
+
 ## Retrospective
 
 ### できるようになったこと (ある程度は)
